@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+
+    android:layout_width="150dp"
+    android:layout_height="150dp">
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="100dp"
+        android:id="@+id/icon_layout"
+        android:background="@drawable/shape_circle"
+        android:layout_height="100dp">
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_centerInParent="true"
+            android:layout_height="75dp"
+            android:src="@drawable/supplies"
+
+
+            android:id="@+id/img_icon"
+            android:tint="@color/grayAccent"
+            />
+
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nursing Uniforms and items"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/icon_layout"
+
+        />
+
+
+
+</RelativeLayout>
