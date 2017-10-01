@@ -28,7 +28,7 @@ public class splash extends AppCompatActivity {
             public void run() {
                 // Close SplashScreenActivity.class
                 // Start MainActivity.class
-                Intent myIntent = new Intent(splash.this,MainActivity.class);
+                Intent myIntent = new Intent(splash.this,OptionActivity.class);
 
                 startActivity(myIntent);
 

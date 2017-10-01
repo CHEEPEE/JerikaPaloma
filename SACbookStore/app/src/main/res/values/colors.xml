@@ -6,4 +6,11 @@
     <color name="grayAccent">#4f4f4f</color>
     <color name="white">#ffffff</color>
     <color name="primeColor">#b92b27</color>
+    <color name="blue">#3498db</color>
+    <color name="red">#e74c3c</color>
+    <color name="yellow">#f1c40f</color>
+    <color name="orange">#e67e22</color>
+    <color name="green">#2ecc71</color>
+    <color name="violet">#9b59b6</color>
+    <color name="grey">#34495e</color>
 </resources>

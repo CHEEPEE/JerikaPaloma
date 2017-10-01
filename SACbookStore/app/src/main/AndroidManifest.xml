@@ -9,14 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="jerika.com.sacbookstore.splash">
+        <activity
+            android:name=".splash"
+            android:theme="@style/MyActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="jerika.com.sacbookstore.MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".OptionActivity" />
+        <activity
+            android:name=".OptionItemSelectedList"
+            android:label="@string/title_activity_option_item_selected_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

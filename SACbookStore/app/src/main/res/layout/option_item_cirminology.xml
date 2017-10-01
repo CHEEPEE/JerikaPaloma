@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/cd_others"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/green"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cardCornerRadius="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:id="@+id/icon_id_criminology_uniform_accessories"
+                >
+                <ImageView
+                    android:tint="@color/green"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/crim"
+                    android:layout_margin="15dp"
+
+                    />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/title_id_criminology_uniform_accessories"
+                android:layout_height="wrap_content"
+                android:text="@string/title_criminology"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/icon_id_criminology_uniform_accessories"
+                android:layout_alignTop="@id/icon_id_criminology_uniform_accessories"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of Supplies Available"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/icon_id_criminology_uniform_accessories"
+                android:layout_below="@+id/title_id_criminology_uniform_accessories"
+                android:layout_marginTop="3dp"
+
+                />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/onclick_criminology"
+            >
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

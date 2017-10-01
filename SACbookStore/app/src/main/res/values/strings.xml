@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SAC book Store</string>
+    <string name="title_school_supplies">SCHOOL SUPPLIES</string>
+    <string name="title_pe_uniform">PE UNIFORM</string>
+    <string name="title_school_uniforms">SHOOL UNIFORMS</string>
+    <string name="title_nursing_uniforms_and_accessories">NURSING UNIFORM AND ACCESSORIES</string>
+    <string name="title_criminology">CRIMINOLOGY UNIFORMS AND ACCESSORIES</string>
+    <string name="title_books_and_manuals">BOOKS AND MANUALS</string>
+    <string name="title_other">OTHERS</string>
+    <string name="title_activity_option_item_selected_list">OptionItemSelectedList</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
 </resources>

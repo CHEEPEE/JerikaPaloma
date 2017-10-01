@@ -68,19 +68,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-
         getMenuInflater().inflate(R.menu.search, menu);
         // Locate the search item
         MenuItem searchItem = menu.findItem(R.id.menu_search);
-
-
         ItemList.all_des();
         // Retrieves the SearchView from the search menu item
         SearchView searchView = (SearchView) searchItem.getActionView();
-
-
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -229,8 +222,6 @@ public class MainActivity extends AppCompatActivity {
         }else if (i==7){
             listAdapterdec = new listAdapter(MainActivity.this,ItemList.convertToArrayList(ItemList.school_uniform_item_description),ItemList.convertToArrayList(ItemList.school_uniform_unit),ItemList.convertToArrayList(ItemList.school_uniform_selling_price),ItemList.schoolUniformIcons,ItemList.convertToArrayListBoolean(ItemList.avail_uniform));
             listView.setAdapter(listAdapterdec);
-
-
             listAdapterdec.notifyDataSetChanged();
         }
     }
