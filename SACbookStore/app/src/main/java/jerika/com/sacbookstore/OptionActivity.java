@@ -21,7 +21,6 @@ public class OptionActivity extends AppCompatActivity {
             variables[i] = (RelativeLayout) findViewById(ids[i]);
             relativeOnclick(variables[i],i);
         }
-
     }
 
     private void relativeOnclick(final RelativeLayout relativeLayout, final int currentItem){

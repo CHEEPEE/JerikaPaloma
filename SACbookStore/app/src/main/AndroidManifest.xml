@@ -19,11 +19,24 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".OptionActivity" />
+        <activity android:name=".OptionActivity"
+            >
+
+
+        </activity>
         <activity
             android:name=".OptionItemSelectedList"
             android:label="@string/title_activity_option_item_selected_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".OptionActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".OptionActivity"
+                >
+            </meta-data>
+
+
+        </activity>
     </application>
 
 </manifest>

@@ -45,7 +45,7 @@
                 android:layout_alignTop="@id/icon_id_criminology_uniform_accessories"
                 android:layout_marginTop="5dp"
                 />
-            <TextView
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Number of Supplies Available"
@@ -55,7 +55,7 @@
                 android:layout_below="@+id/title_id_criminology_uniform_accessories"
                 android:layout_marginTop="3dp"
 
-                />
+                />-->
 
 
         </RelativeLayout>

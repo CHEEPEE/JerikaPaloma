@@ -3,7 +3,9 @@ package jerika.com.sacbookstore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -11,12 +13,17 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -36,38 +43,60 @@ public class OptionItemSelectedList extends AppCompatActivity {
     private String pageTitle;
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private int pageNum = 3;
+    listAdapter listAdapter;
+    FloatingActionButton searchFloat;
 
 
     /**
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    EditText search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option_item_selected_list);
-/*
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+      /*  final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        searchFloat = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+
 
         Bundle bundle = getIntent().getExtras();
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
-        //mViewPager.setCurrentItem(1);
+        ;
+
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(bundle.getInt("currentItem"));
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        getSupportActionBar().setTitle(mSectionsPagerAdapter.getPageTitle(bundle.getInt("currentItem")));
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (position == 7){
+                    searchFloat.setVisibility(View.INVISIBLE);
+                }
+                getSupportActionBar().setTitle(mSectionsPagerAdapter.getPageTitle(position));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        searchFloat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewPager.setCurrentItem(7);
             }
         });
 
@@ -78,6 +107,9 @@ public class OptionItemSelectedList extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_option_item_selected_list, menu);
+
+
+
         return false;
     }
 
@@ -86,14 +118,15 @@ public class OptionItemSelectedList extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
         }
-
         return super.onOptionsItemSelected(item);
+
     }
 
 
@@ -132,6 +165,9 @@ public class OptionItemSelectedList extends AppCompatActivity {
                 case 6:
                     FragementOthers fragementOthers = new FragementOthers();
                     return fragementOthers;
+                case 7:
+                    FragementAllItems fragementAllItems = new FragementAllItems();
+                    return fragementAllItems;
                 default: return null;
             }
 
@@ -141,7 +177,7 @@ public class OptionItemSelectedList extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 7;
+            return 8;
         }
 
         @Override
@@ -164,6 +200,8 @@ public class OptionItemSelectedList extends AppCompatActivity {
                     return "BOOKS AND MANUALS";
                 case 6:
                     return "OTHERS";
+                case 7:
+                    return "ALL ITEMS";
 
             }
             return null;

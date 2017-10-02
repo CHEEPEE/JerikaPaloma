@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -16,7 +18,7 @@ import java.util.ArrayList;
  * Created by Keji's Lab on 24/07/2017.
  */
 
-public class listAdapter extends BaseAdapter {
+public class listAdapter extends BaseAdapter implements Filterable {
     private Context mContext;
     private final ArrayList<String> arrayTitle;
     private final ArrayList<Boolean> arrayAvalability;
@@ -95,7 +97,8 @@ public class listAdapter extends BaseAdapter {
     }
 
 
-
-
-
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
 }

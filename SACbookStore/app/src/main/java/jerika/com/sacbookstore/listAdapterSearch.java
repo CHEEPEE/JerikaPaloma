@@ -32,8 +32,6 @@ public class listAdapterSearch extends BaseAdapter {
         this.items = itemListModels;
 
 
-
-
         inflater = ( LayoutInflater )c.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }

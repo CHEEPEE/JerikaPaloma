@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="jerika.com.sacbookstore.OptionItemSelectedList$PlaceholderFragment">
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="55dp"
+       android:id="@+id/appbar"
+       android:gravity="center"
+       >
+       <android.support.v7.widget.CardView
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           app:cardCornerRadius="20dp"
+           >
+           <LinearLayout
+               android:orientation="horizontal"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <ImageView
+                   android:layout_width="40dp"
+                   android:layout_marginLeft="5dp"
+                   android:layout_height="match_parent"
+                   android:src="@drawable/ic_search_black_24dp"
+                   android:layout_marginRight="10dp"
+                   />
+               <EditText
+                   android:layout_width="match_parent"
+                   android:id="@+id/search_bar"
+                   android:layout_height="match_parent"
+                   android:hint="Search Here"
+                   android:pointerIcon="arrow"
+                   android:textColor="@color/grayAccent"
+                   android:backgroundTint="@android:color/transparent"
+
+                   />
+           </LinearLayout>
+       </android.support.v7.widget.CardView>
+
+   </RelativeLayout>
+    <ListView
+        android:scrollbars="none"
+        android:divider="@color/white"
+        android:layout_below="@id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_lv_item_list"
+        ></ListView>
+
+</RelativeLayout>
