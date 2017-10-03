@@ -85,6 +85,9 @@ public class OptionItemSelectedList extends AppCompatActivity {
                 if (position == 7){
                     searchFloat.setVisibility(View.INVISIBLE);
                 }
+                else {
+                    searchFloat.setVisibility(View.VISIBLE);
+                }
                 getSupportActionBar().setTitle(mSectionsPagerAdapter.getPageTitle(position));
             }
 
